@@ -1,0 +1,172 @@
+[
+  {
+    "href": "https://vibedevelopment.pro",
+    "src": "https://zenith-hospitality.com/wp-content/uploads/2026/07/Logo.svg",
+    "name": "Vibe Development",
+    "file": "partners/partner-0.svg",
+    "slug": "vibe-development",
+    "category": "Property development",
+    "headline": "Developing places in Bali.",
+    "intro": "Vibe Development develops residential and hospitality property in Bali, with projects in Sanur and Nusa Dua.",
+    "body": "Its portfolio spans apartments, villas and hospitality-led developments. Its team brings together architecture, engineering and project support.",
+    "services": [
+      [
+        "Property development",
+        "Apartments, villas and hospitality property in Bali."
+      ],
+      [
+        "Design and engineering",
+        "Architectural and engineering expertise within the development team."
+      ],
+      [
+        "Project information",
+        "Property selection, project documents and investment planning resources."
+      ]
+    ]
+  },
+  {
+    "href": "https://sansaradevelopment.com/en",
+    "src": "https://zenith-hospitality.com/wp-content/uploads/2026/06/logo_sansara_Монтажная-область-1-копия-2-300x212.png",
+    "name": "Sansara",
+    "file": "partners/partner-1.png",
+    "slug": "sansara",
+    "category": "Development partner",
+    "headline": "Sansara Development Group.",
+    "intro": "Sansara is listed in Zenith Hospitality Global’s partner network.",
+    "body": "The detailed company introduction, services and project gallery are awaiting confirmed partner information.",
+    "services": [],
+    "pending": true
+  },
+  {
+    "href": "https://yvespreissler.com/",
+    "src": "https://zenith-hospitality.com/wp-content/uploads/2026/05/Yves-Preissler-logo-07-300x300.jpg",
+    "name": "Yves Preissler",
+    "file": "partners/partner-2.jpg",
+    "slug": "yves-preissler",
+    "category": "Fitness, wellness & recovery",
+    "headline": "Wellness with a business perspective.",
+    "intro": "Yves Preissler Business Consulting develops fitness, wellness and recovery concepts for hotels, gyms and residential settings.",
+    "body": "The team combines business consulting with detailed turnkey fitness solutions. Its work includes new gym concepts, wellness programs and improvements to existing clubs.",
+    "services": [
+      [
+        "Gym and health club consulting",
+        "Concepts and practical support for new and existing fitness businesses."
+      ],
+      [
+        "Hospitality fitness consulting",
+        "Fitness propositions tailored to hotels and their guests."
+      ],
+      [
+        "Recovery and wellness",
+        "Programs and facilities that connect guest needs with the business model."
+      ],
+      [
+        "Residential fitness",
+        "Bespoke fitness concepts for residential developments and home gyms."
+      ]
+    ],
+    "gallery": [
+      "partners/yvespreissler-gallery-0.jpg",
+      "partners/yvespreissler-gallery-1.jpg",
+      "partners/yvespreissler-gallery-2.jpg"
+    ]
+  },
+  {
+    "href": "https://iber.homes/",
+    "src": "https://zenith-hospitality.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-18-at-08.23.16-300x259.jpeg",
+    "name": "Iber Homes",
+    "file": "partners/partner-3.jpeg",
+    "slug": "iber-homes",
+    "category": "Concept & strategy",
+    "headline": "A place, a purpose, a workable model.",
+    "intro": "IBER HOMES develops concepts and strategies for nature-based destinations and places to stay.",
+    "body": "Its approach considers the site, intended guest, experience, architecture and economics together. It then connects the specialists and partners needed to move a concept forward.",
+    "services": [
+      [
+        "Place and concept research",
+        "Explore the location, market, intended guests and potential of a site."
+      ],
+      [
+        "Business and experience models",
+        "Bring space, guest experience and economics into one concept."
+      ],
+      [
+        "Development coordination",
+        "Connect architects, manufacturers, builders and operators around an agreed direction."
+      ]
+    ],
+    "note": "Its website uses credited illustrative imagery; a dedicated partner gallery will be added when selected images are provided."
+  },
+  {
+    "href": "https://www.nomadbreath.com/",
+    "src": "https://zenith-hospitality.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-18-at-08.22.29-300x103.jpeg",
+    "name": "Nomad Breath",
+    "file": "partners/partner-4.jpeg",
+    "slug": "nomad-breath",
+    "category": "Partner network",
+    "headline": "Nomad Breath.",
+    "intro": "Nomad Breath is listed in Zenith Hospitality Global’s partner network.",
+    "body": "Its linked website is currently unavailable. The company introduction, services and gallery are awaiting confirmed partner information.",
+    "services": [],
+    "pending": true
+  },
+  {
+    "href": "https://apa-architects.com/",
+    "src": "https://zenith-hospitality.com/wp-content/uploads/2024/12/WhatsApp-Image-2024-12-24-at-20.13.18-300x229.jpeg",
+    "name": "Anton Petrov",
+    "file": "partners/partner-5.jpeg",
+    "slug": "anton-petrov",
+    "category": "Architecture & interiors",
+    "headline": "Spaces shaped by people and place.",
+    "intro": "APA Architects, led by Anton Petrov, designs residences, hospitality destinations and private real estate developments.",
+    "body": "The studio connects buildings and interiors with landscape and history, bringing a human-centered approach to function, experience and design.",
+    "services": [
+      [
+        "Architecture",
+        "Design for residential, hospitality and private development projects."
+      ],
+      [
+        "Interior design",
+        "Interiors considered alongside the building and its setting."
+      ],
+      [
+        "Place-led design",
+        "A focus on landscape, context and the people who use each space."
+      ]
+    ],
+    "gallery": [
+      "partners/antonpetrov-gallery-0.jpg",
+      "partners/antonpetrov-gallery-1.jpg",
+      "partners/antonpetrov-gallery-2.jpg"
+    ]
+  },
+  {
+    "href": "https://www.3dscan.id/",
+    "src": "https://zenith-hospitality.com/wp-content/uploads/2024/12/3D-Scan_-full-logo_final_v1-300x101.png",
+    "name": "3dscan.id",
+    "file": "partners/partner-6.png",
+    "slug": "3dscan",
+    "category": "3D capture & digital twins",
+    "headline": "Explore real spaces, digitally.",
+    "intro": "3dScan.id provides professional 3D capture, digital twins and virtual tours for properties and businesses in Indonesia.",
+    "body": "Its Matterport-based models help people explore spaces remotely and support property marketing, project coordination and communication.",
+    "services": [
+      [
+        "3D scanning",
+        "Capture physical spaces using professional LiDAR and digital twin technology."
+      ],
+      [
+        "Virtual property tours",
+        "Interactive walkthroughs for hospitality, residential and commercial properties."
+      ],
+      [
+        "Architecture and construction",
+        "Digital spatial records that support collaboration and project planning."
+      ],
+      [
+        "Model management",
+        "Hosted models with notes, links, video and other useful information."
+      ]
+    ]
+  }
+]
