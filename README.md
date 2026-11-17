@@ -33,3 +33,6 @@ The generated HTML pages are included and ready to preview. Edit templates and J
 - All pages retain the current preview noindex setting.
 
 Packaged 17 November 2026, Asia/Makassar.
+
+## Deploy on Vercel
+Import this GitHub repository in Vercel. Choose the Other framework and keep the repository root. The included vercel.json runs node deploy-build.cjs and publishes dist/. No environment variables are required. Future pushes to main can deploy automatically.

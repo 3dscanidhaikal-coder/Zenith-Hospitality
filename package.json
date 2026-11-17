@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.cjs",
     "build": "node build.cjs",
-    "check": "node check.cjs"
+    "check": "node check.cjs",
+    "build:deploy": "node deploy-build.cjs"
   },
   "engines": {
     "node": ">=20"
