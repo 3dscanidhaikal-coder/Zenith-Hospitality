@@ -1,14 +1,6 @@
 (() => {
  'use strict';
- const introVisitKey='zenith-intro-seen-v1';
- const isHomepageRefresh=performance.getEntriesByType('navigation')[0]?.type==='reload';
- try{
-  if(!isHomepageRefresh && localStorage.getItem(introVisitKey)==='1')return;
-  localStorage.setItem(introVisitKey,'1');
- }catch{
-  // Session storage is a fallback when persistent storage is unavailable.
-  try{if(!isHomepageRefresh && sessionStorage.getItem(introVisitKey)==='1')return;sessionStorage.setItem(introVisitKey,'1');}catch{}
- }
+ function playIntro(){
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  if(reduce.matches)return;
  const overlay=document.createElement('div');overlay.className='site-intro';overlay.setAttribute('aria-hidden','true');
@@ -51,7 +43,12 @@
   // a double edge, and restarting the header entrance moves the destination.
   clearTimeout(safety);finish();
  }
- document.addEventListener('DOMContentLoaded',enter,{once:true});
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',enter,{once:true});
+ else enter();
  reduce.addEventListener('change',()=>{if(reduce.matches){clearTimeout(safety);finish();}});
  addEventListener('pagehide',finish,{once:true});
+ }
+ playIntro();
+ // A history-restored homepage is a new visit too.
+ addEventListener('pageshow',event=>{if(event.persisted)playIntro();});
 })();
