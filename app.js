@@ -101,7 +101,7 @@
  if('IntersectionObserver' in window && !reduce.matches){
   // Reveal individual content instead of hiding entire sections behind one trigger.
   document.querySelectorAll('.reveal').forEach(el=>el.classList.remove('reveal','is-visible'));
-  const candidates=[...document.querySelectorAll('main h1,main h2,main h3,main p,main figcaption,main .breadcrumb,main .text-link,main .button,main .service-detail summary,main .field,main .filters button,main .service-anchor-nav a,main .topic-list span,main .concept-label,main .publication-note strong,main .experience-number,main img,footer .footer-logo,footer p,footer h2,footer address,footer nav a,footer .footer-top>div:last-child>a,footer .footer-bottom span')].filter(el=>!el.closest('.hero,.slide,.zenith-squares,#draft-fallback')&&!el.matches('.service-photo img, .careers-office-photo img, .about-team-photo img, .service-scene-image img'));
+  const candidates=[...document.querySelectorAll('main h1,main h2,main h3,main p,main figcaption,main .breadcrumb,main .text-link,main .button,main .service-detail summary,main .field,main .filters button,main .service-anchor-nav a,main .topic-list span,main .concept-label,main .publication-note strong,main .experience-number,main img,footer .footer-logo,footer p,footer h2,footer address,footer nav a,footer .footer-top>div:last-child>a,footer .footer-bottom span')].filter(el=>!el.closest('.hero,.slide,.zenith-squares,#draft-fallback')&&!el.matches('.service-photo img, .careers-office-photo img, .about-team-photo img, .people-home .portrait-frame img, .service-scene-image img'));
   const candidateSet=new Set(candidates);
   const targets=candidates.filter(el=>{let parent=el.parentElement;while(parent){if(candidateSet.has(parent))return false;parent=parent.parentElement;}return true;});
   targets.forEach(el=>{
@@ -121,7 +121,7 @@
   }),{threshold:.08});
   document.querySelectorAll('.service-photo, .careers-office-photo').forEach(photo=>photoObserver.observe(photo));
   // Team cards reveal together on entry, and reset after leaving the viewport.
-  const teamCards = [...document.querySelectorAll('.about-team-member')];
+  const teamCards = [...document.querySelectorAll('.about-team-member, .people-home .person')];
   const teamObserver = new IntersectionObserver(entries => entries.forEach(entry => {
    entry.target.classList.toggle('team-visible', entry.isIntersecting);
   }), {threshold: .22});
