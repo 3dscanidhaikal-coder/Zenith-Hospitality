@@ -671,7 +671,7 @@ main figcaption,.concept-label,.gallery-note,.helper,.form-disclosure,.partner-h
 .service-scene:nth-child(even){aspect-ratio:4/4.8;margin-top:150px}
 .service-scene:nth-child(3),.service-scene:nth-child(6){aspect-ratio:1/1}
 .service-scene-image{position:absolute;inset:0;z-index:-2}
-.service-scene-image img{transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.service-scene-image img{transition:transform 2.8s cubic-bezier(.4,0,.2,1)}
 .service-scene:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 15%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.88));transition:background-color .7s ease}
 .service-scene-content{position:absolute;inset:auto 36px 35px}
 .service-scene-number{display:block;font-size:11px;letter-spacing:.1em;margin-bottom:16px;opacity:.8}
@@ -809,7 +809,7 @@ main figcaption,.concept-label,.gallery-note,.helper,.form-disclosure,.partner-h
 @media(max-width:767px){.about-story#about-story{padding-top:75px}.about-hero .expertise-hero-image{object-position:58% center}}
 /* Shared, even-paced portrait reveals on About and Home. */
 @media(prefers-reduced-motion:no-preference){
- .motion-ready :is(.about-team-member, .people-home .person) :is(.about-team-photo, .portrait-frame) img{transition:clip-path 2.1s cubic-bezier(.4,0,.2,1);transition-delay:var(--team-delay,0ms)}
+ .motion-ready :is(.about-team-member, .people-home .person) :is(.about-team-photo, .portrait-frame) img{transition:clip-path 2.8s cubic-bezier(.4,0,.2,1);transition-delay:var(--team-delay,0ms)}
  .motion-ready :is(.about-team-member, .people-home .person)>h3,.motion-ready :is(.about-team-member, .people-home .person)>p{transition-duration:1.2s;transition-delay:calc(var(--team-delay,0ms) + 450ms)}
  .motion-ready :is(.about-team-member, .people-home .person)>p{transition-delay:calc(var(--team-delay,0ms) + 600ms)}
 }
@@ -1300,4 +1300,11 @@ html{scrollbar-gutter:stable}
  .footer-top>.footer-connect{row-gap:6px;align-content:start}
  .footer-top>.footer-connect>h2{margin-bottom:8px}
  .footer-top>.footer-connect>a{padding-block:0;line-height:1.5}
+}
+/* Move a cover instead of repainting a clipped portrait during mobile scrolling. */
+@media(max-width:767px) and (prefers-reduced-motion:no-preference){
+ .motion-ready :is(.about-team-member,.people-home .person) :is(.about-team-photo,.portrait-frame){position:relative;isolation:isolate}
+ .motion-ready :is(.about-team-member,.people-home .person) :is(.about-team-photo,.portrait-frame) img{clip-path:none;transition:transform .8s var(--ease),filter .8s}
+ .motion-ready :is(.about-team-member,.people-home .person) :is(.about-team-photo,.portrait-frame)::after{content:'';position:absolute;inset:0;background:var(--bg);pointer-events:none;transform:translateY(0);transition:transform 2.8s cubic-bezier(.4,0,.2,1)}
+ .motion-ready :is(.about-team-member,.people-home .person).team-visible :is(.about-team-photo,.portrait-frame)::after{transform:translateY(101%)}
 }

@@ -124,10 +124,15 @@
   const teamCards = [...document.querySelectorAll('.about-team-member, .people-home .person')];
   const teamObserver = new IntersectionObserver(entries => entries.forEach(entry => {
    if (entry.isIntersecting) {
-    entry.target.classList.add('team-visible');
     teamObserver.unobserve(entry.target);
+    const image = entry.target.querySelector('img');
+    if (image) image.loading = 'eager';
+    const ready = image?.decode ? image.decode().catch(() => {}) : Promise.resolve();
+    ready.then(() => requestAnimationFrame(() => {
+     entry.target.classList.add('team-visible');
+    }));
    }
-  }), {threshold: .22});
+  }), {threshold: .08});
   teamCards.forEach((card, index) => {
    card.style.setProperty('--team-delay', (index * 140) + 'ms');
    card.querySelectorAll('h3,p').forEach(text => text.classList.remove('reveal', 'is-visible'));
