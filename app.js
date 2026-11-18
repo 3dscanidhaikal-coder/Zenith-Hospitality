@@ -120,10 +120,13 @@
    if(entry.isIntersecting){entry.target.classList.add('photo-visible');photoObserver.unobserve(entry.target);}
   }),{threshold:.08});
   document.querySelectorAll('.service-photo, .careers-office-photo').forEach(photo=>photoObserver.observe(photo));
-  // Team cards reveal together on entry, and reset after leaving the viewport.
+  // Team portraits reveal once per page load on Home and About.
   const teamCards = [...document.querySelectorAll('.about-team-member, .people-home .person')];
   const teamObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-   entry.target.classList.toggle('team-visible', entry.isIntersecting);
+   if (entry.isIntersecting) {
+    entry.target.classList.add('team-visible');
+    teamObserver.unobserve(entry.target);
+   }
   }), {threshold: .22});
   teamCards.forEach((card, index) => {
    card.style.setProperty('--team-delay', (index * 140) + 'ms');
