@@ -22,6 +22,20 @@
         "Project information",
         "Property selection, project documents and investment planning resources."
       ]
+    ],
+    "collaboration": [
+      [
+        "Development and operations together",
+        "Bringing property development into the same conversation as the hospitality concept helps connect the building brief with the way the property will operate."
+      ],
+      [
+        "A shared view of the project",
+        "Vibe’s architecture, engineering and project support give the development team a practical counterpart for discussing Zenith’s hospitality requirements."
+      ],
+      [
+        "A Bali property context",
+        "Its residential and hospitality focus in Bali provides a relevant setting for aligning the intended guest experience with development priorities."
+      ]
     ]
   },
   {
@@ -35,7 +49,21 @@
     "intro": "Sansara is listed in Zenith Hospitality Global’s partner network.",
     "body": "The detailed company introduction, services and project gallery are awaiting confirmed partner information.",
     "services": [],
-    "pending": true
+    "pending": true,
+    "collaboration": [
+      [
+        "A clear project brief",
+        "Our starting point is an agreed hospitality vision, with the owner’s objectives and the development priorities discussed together."
+      ],
+      [
+        "Defined responsibilities",
+        "A useful development partnership makes the scope, decision owners and information needed by each team clear before work begins."
+      ],
+      [
+        "Fit before appointment",
+        "We assess the role a partner can play against the specific project needs. The detailed scope with Sansara will be presented once confirmed."
+      ]
+    ]
   },
   {
     "href": "https://yvespreissler.com/",
@@ -69,6 +97,20 @@
       "partners/yvespreissler-gallery-0.jpg",
       "partners/yvespreissler-gallery-1.jpg",
       "partners/yvespreissler-gallery-2.jpg"
+    ],
+    "collaboration": [
+      [
+        "Specialist wellness input",
+        "Fitness, recovery and wellness concepts need dedicated expertise. Yves Preissler’s focus complements Zenith’s broader hospitality planning."
+      ],
+      [
+        "Experience linked to the business model",
+        "Its combination of consulting and fitness solutions supports a conversation about both the guest proposition and the practical delivery of the facility."
+      ],
+      [
+        "A connected operating brief",
+        "Working from a shared brief helps align the wellness offer with the wider property, its guests and its operating team."
+      ]
     ]
   },
   {
@@ -95,7 +137,21 @@
         "Connect architects, manufacturers, builders and operators around an agreed direction."
       ]
     ],
-    "note": "Its website uses credited illustrative imagery; a dedicated partner gallery will be added when selected images are provided."
+    "note": "Its website uses credited illustrative imagery; a dedicated partner gallery will be added when selected images are provided.",
+    "collaboration": [
+      [
+        "Concept and economics in one conversation",
+        "IBER HOMES considers the site, guest experience, architecture and economics together, complementing Zenith’s focus on commercially grounded hospitality."
+      ],
+      [
+        "A response to place",
+        "Its nature-based destination focus brings a useful perspective to projects where the setting is central to the intended stay."
+      ],
+      [
+        "Continuity between specialists",
+        "Its development coordination approach supports a shared direction across designers, builders and operators."
+      ]
+    ]
   },
   {
     "href": "https://www.nomadbreath.com/",
@@ -108,7 +164,21 @@
     "intro": "Nomad Breath is listed in Zenith Hospitality Global’s partner network.",
     "body": "Its linked website is currently unavailable. The company introduction, services and gallery are awaiting confirmed partner information.",
     "services": [],
-    "pending": true
+    "pending": true,
+    "collaboration": [
+      [
+        "The right fit for the brief",
+        "We begin with the project’s needs and agree where a specialist partner can contribute to the intended hospitality experience."
+      ],
+      [
+        "Clarity before delivery",
+        "Collaboration works best when the scope, responsibilities and points of coordination are understood by both teams."
+      ],
+      [
+        "A considered introduction",
+        "Nomad Breath is part of our listed network. Its specific contribution and selection rationale will be detailed once the partner information is confirmed."
+      ]
+    ]
   },
   {
     "href": "https://apa-architects.com/",
@@ -138,6 +208,20 @@
       "partners/antonpetrov-gallery-0.jpg",
       "partners/antonpetrov-gallery-1.jpg",
       "partners/antonpetrov-gallery-2.jpg"
+    ],
+    "collaboration": [
+      [
+        "Design with operating input",
+        "APA’s architecture and interiors focus complements Zenith’s hospitality brief, bringing the intended guest experience and everyday use into the design conversation."
+      ],
+      [
+        "A connection to place",
+        "The studio’s attention to landscape, history and people supports projects where the property needs a clear relationship with its setting."
+      ],
+      [
+        "Aligned specialist roles",
+        "Zenith contributes the hospitality and operating perspective, while the appointed architects retain responsibility for their design work."
+      ]
     ]
   },
   {
@@ -166,6 +250,20 @@
       [
         "Model management",
         "Hosted models with notes, links, video and other useful information."
+      ]
+    ],
+    "collaboration": [
+      [
+        "A shared view of the space",
+        "3dScan.id’s digital twins give owners and project teams a way to explore and discuss a property remotely."
+      ],
+      [
+        "Clearer project conversations",
+        "Spatial records and model annotations can support coordination by giving stakeholders a common visual reference."
+      ],
+      [
+        "A link between property and presentation",
+        "Virtual walkthroughs complement hospitality marketing by helping prospective guests and partners understand the spaces they are considering."
       ]
     ]
   }
