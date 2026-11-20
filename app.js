@@ -101,7 +101,7 @@
  if('IntersectionObserver' in window && !reduce.matches){
   // Reveal individual content instead of hiding entire sections behind one trigger.
   document.querySelectorAll('.reveal').forEach(el=>el.classList.remove('reveal','is-visible'));
-  const candidates=[...document.querySelectorAll('main h1,main h2,main h3,main p,main figcaption,main .breadcrumb,main .text-link,main .button,main .service-detail summary,main .field,main .filters button,main .service-anchor-nav a,main .topic-list span,main .concept-label,main .publication-note strong,main .experience-number,main img,footer .footer-logo,footer p,footer h2,footer address,footer nav a,footer .footer-top>div:last-child>a,footer .footer-bottom span')].filter(el=>!el.closest('.hero,.slide,.zenith-squares,#draft-fallback')&&!el.matches('.service-photo img, .careers-office-photo img, .about-team-photo img, .service-scene-image img'));
+  const candidates=[...document.querySelectorAll('main h1,main h2,main h3,main p,main figcaption,main .breadcrumb,main .text-link,main .button,main .service-detail summary,main .field,main .filters button,main .service-anchor-nav a,main .topic-list span,main .concept-label,main .publication-note strong,main .experience-number,main img,footer .footer-logo,footer p,footer h2,footer address,footer nav a,footer .footer-top>div:last-child>a,footer .footer-bottom span')].filter(el=>!el.closest('.hero,.slide,.zenith-squares,#draft-fallback')&&!el.matches('.service-photo img, .careers-office-photo img, .about-team-photo img, .people-home .portrait-frame img, .service-scene-image img'));
   const candidateSet=new Set(candidates);
   const targets=candidates.filter(el=>{let parent=el.parentElement;while(parent){if(candidateSet.has(parent))return false;parent=parent.parentElement;}return true;});
   targets.forEach(el=>{
@@ -120,11 +120,19 @@
    if(entry.isIntersecting){entry.target.classList.add('photo-visible');photoObserver.unobserve(entry.target);}
   }),{threshold:.08});
   document.querySelectorAll('.service-photo, .careers-office-photo').forEach(photo=>photoObserver.observe(photo));
-  // Team cards reveal together on entry, and reset after leaving the viewport.
-  const teamCards = [...document.querySelectorAll('.about-team-member')];
+  // Team portraits reveal once per page load on Home and About.
+  const teamCards = [...document.querySelectorAll('.about-team-member, .people-home .person')];
   const teamObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-   entry.target.classList.toggle('team-visible', entry.isIntersecting);
-  }), {threshold: .22});
+   if (entry.isIntersecting) {
+    teamObserver.unobserve(entry.target);
+    const image = entry.target.querySelector('img');
+    if (image) image.loading = 'eager';
+    const ready = image?.decode ? image.decode().catch(() => {}) : Promise.resolve();
+    ready.then(() => requestAnimationFrame(() => {
+     entry.target.classList.add('team-visible');
+    }));
+   }
+  }), {threshold: .08});
   teamCards.forEach((card, index) => {
    card.style.setProperty('--team-delay', (index * 140) + 'ms');
    card.querySelectorAll('h3,p').forEach(text => text.classList.remove('reveal', 'is-visible'));
