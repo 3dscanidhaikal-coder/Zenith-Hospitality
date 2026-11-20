@@ -1378,3 +1378,8 @@ a.expertise-back:is(:hover,:focus-visible),.project-slider .slider-controls butt
 /* White text and glyphs on the client blue controls. */
 .floating-whatsapp img{filter:brightness(0) invert(1)}
 a.expertise-back:is(:hover,:focus-visible) .circle-arrow,.project-slider .slider-controls button:is(:hover,:focus-visible) .circle-arrow{filter:brightness(0) invert(1)}
+
+/* One CTA border weight across all variants and interaction states. */
+.button,.button:is(:hover,:focus-visible,:active){border-width:1px!important;border-style:solid!important}
+body .button,body.home .hero .button.outline{box-shadow:none}
+.hero .button.outline,.slide-caption .button.outline,.expertise-hero-content .button.outline,.careers-hero .button.outline{border-color:rgba(255,255,255,.65);box-shadow:none}
