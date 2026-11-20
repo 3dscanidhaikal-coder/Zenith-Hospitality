@@ -1349,4 +1349,4 @@ html{scrollbar-gutter:stable}
 /* The wordmark waits in the navbar while only the mountain flies into place. */
 .intro-logo.intro-mountain-flight{aspect-ratio:1858/681}
 .intro-navbar-wordmark{position:fixed;display:block;object-fit:contain;opacity:0;pointer-events:none}
-.intro-navbar-wordmark.is-ready{opacity:1}
+

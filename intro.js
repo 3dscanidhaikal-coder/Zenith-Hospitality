@@ -36,14 +36,14 @@
   const from=logo.getBoundingClientRect(),brandBounds=(destination||target).getBoundingClientRect();
   // The stationary lettering uses the exact full-logo canvas, with its mountain removed.
   Object.assign(wordmark.style,{left:brandBounds.left+'px',top:brandBounds.top+'px',width:brandBounds.width+'px',height:brandBounds.height+'px'});
-  wordmark.classList.add('is-ready');
   // Fly to the mountain's actual bounds, not the full logo's rectangle.
   const fit=Math.min(brandBounds.width/1858,brandBounds.height/1299);
   const to={left:brandBounds.left+(brandBounds.width-1858*fit)/2,top:brandBounds.top+(brandBounds.height-1299*fit)/2,width:1858*fit,height:681*fit};
   animations.push(logo.animate([{transform:'translate(0,0) scale(1)'},{transform:`translate(${to.left+to.width/2-from.left-from.width/2}px,${to.top+to.height/2-from.top-from.height/2}px) scale(${to.width/from.width},${to.height/from.height})`}],{duration:2100,easing:'cubic-bezier(.65,0,.2,1)',fill:'forwards'}));
   // Only the mountain changes colour on a light navbar; the lettering never travels.
-  animations.push(mountain.animate([{opacity:1},{opacity:0}],{duration:1450,delay:350,easing:'ease-in-out',fill:'forwards'}));
-  animations.push(white.animate([{opacity:0},{opacity:1}],{duration:1450,delay:350,easing:'ease-in-out',fill:'forwards'}));
+  if(!onHero)animations.push(white.animate([{opacity:0},{opacity:1}],{duration:1450,delay:350,easing:'ease-in-out',fill:'forwards'}));
+  // Lettering resolves during the final settling movement, finishing with the mountain.
+  animations.push(wordmark.animate([{opacity:0},{opacity:1}],{duration:650,delay:1450,easing:'cubic-bezier(.4,0,.2,1)',fill:'forwards'}));
   animations.push(backdrop.animate([{opacity:1},{opacity:0}],{duration:1900,delay:300,easing:'cubic-bezier(.4,0,.2,1)',fill:'forwards'}));
   await Promise.allSettled(animations.map(animation=>animation.finished));
   if(finished)return;
