@@ -23,6 +23,21 @@
  }
  tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>select(i));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight'||event.key==='ArrowLeft')next=(i+1)%tabs.length;if(event.key==='Home')next=0;if(event.key==='End')next=tabs.length-1;if(next!==undefined){event.preventDefault();select(next,true);}});});
  panels.forEach(panel=>{
+  const steps=[...panel.querySelectorAll('[data-service-step]')],cards=[...panel.querySelectorAll('.process-service')];
+  const grid=panel.querySelector('.process-services-rows'),clear=panel.querySelector('[data-service-clear]'),status=panel.querySelector('[data-spotlight-status]');
+  let chosen=-1;
+  function spotlight(index,scroll=false){
+   chosen=index;grid.classList.toggle('has-spotlight',index>=0);
+   cards.forEach((card,i)=>card.classList.toggle('is-spotlit',i===index));
+   steps.forEach((step,i)=>step.setAttribute('aria-pressed',String(i===index)));
+   clear.hidden=index<0;status.textContent=index<0?'All services shown.':cards[index].getAttribute('aria-label')+' highlighted.';
+   if(scroll&&index>=0){const card=cards[index],bounds=card.getBoundingClientRect();if(bounds.top<100||bounds.bottom>innerHeight){if(window.zenithMotion)window.zenithMotion.scrollTo(card);else card.scrollIntoView({behavior:reduce.matches?'instant':'smooth',block:'center'});}}
+  }
+  steps.forEach((step,i)=>step.addEventListener('click',()=>spotlight(chosen===i?-1:i,true)));
+  clear.addEventListener('click',()=>spotlight(-1));
+  cards.forEach((card,i)=>card.addEventListener('focusin',()=>{if(chosen>=0&&chosen!==i)spotlight(i);}));
+ });
+ panels.forEach(panel=>{
   const controls=new Map();
   panel.querySelectorAll('.pathway-feature').forEach(details=>{
    const summary=details.querySelector('summary'),body=details.querySelector('.pathway-feature-body');let motion,wanted=details.open;
