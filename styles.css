@@ -1350,3 +1350,18 @@ html{scrollbar-gutter:stable}
 .intro-logo.intro-mountain-flight{aspect-ratio:1858/681}
 .intro-navbar-wordmark{position:fixed;display:block;object-fit:contain;opacity:0;pointer-events:none}
 
+
+/* Client-selected lighter blue palette, paired with dark text for contrast. */
+:root{--blue-action:#89a0fb;--blue-strong:#4e70f9;--blue-soft:#c4cffd;--blue-mid:#89a0fb;--blue-bright:#4e70f9}
+.site-header .nav-cta,.button.menu-cta,.floating-whatsapp{background:#89a0fb;border-color:#89a0fb;color:#000820}
+.site-header .nav-cta:is(:hover,:focus-visible),.button.menu-cta:is(:hover,:focus-visible),.floating-whatsapp:is(:hover,:focus-visible){background:#4e70f9;border-color:#4e70f9;color:#000820}
+.site-header .nav-arrow::before,.site-header .nav-arrow::after{color:#000820}
+.floating-whatsapp img{filter:none}
+body .button:is(:hover,:focus-visible),body .expertise-hero-content .expertise-hero-cta:is(:hover,:focus-visible),body .home .hero .hero-aside .button.outline:is(:hover,:focus-visible){background:#4e70f9;border-color:#4e70f9;color:#000820}
+body.home .hero .hero-aside .button.outline:is(:hover,:focus-visible),body .invitation .button.gold:is(:hover,:focus-visible),body .slide-caption .button.outline:is(:hover,:focus-visible){background:#4e70f9;border-color:#4e70f9;color:#000820}
+a.expertise-back:is(:hover,:focus-visible),.project-slider .slider-controls button:is(:hover,:focus-visible){background:#89a0fb;border-color:#89a0fb;color:#000820}
+a.expertise-back:is(:hover,:focus-visible) .circle-arrow,.project-slider .slider-controls button:is(:hover,:focus-visible) .circle-arrow{filter:brightness(0)}
+.service-step[aria-pressed=true] .service-step-circle{background:#89a0fb;border-color:#89a0fb;color:#000820;box-shadow:0 0 0 5px var(--bg),0 0 0 6px #c4cffd}
+.service-step:is(:hover,:focus-visible) .service-step-circle{border-color:#4e70f9}
+.partner-marquee .partner-original-logo:is(:hover,:focus-visible){background:#c4cffd;box-shadow:inset 0 0 0 1px #89a0fb}
+@media(min-width:768px){.hero-slide:first-child img{object-position:center center}}

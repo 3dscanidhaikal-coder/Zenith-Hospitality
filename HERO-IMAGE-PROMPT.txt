@@ -1,0 +1,3 @@
+Built-in image generation.
+Prompt: Photorealistic wide premium comfortable hotel suite with white linen, cream wool, warm oak and stone, panoramic snowy mountain and alpine valley view in soft morning light. No people, text or logos. Designed as a homepage hero photograph.
+Asset: assets/hero-alpine-suite.png
