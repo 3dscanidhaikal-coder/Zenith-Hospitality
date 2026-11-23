@@ -21,13 +21,40 @@
    if(paragraph)motions.push(paragraph.animate([{opacity:0,translate:'0 8px'},{opacity:1,translate:'0 0'}],{duration:800,easing:'cubic-bezier(.22,.61,.36,1)'}));
   }
  }
- tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>select(i));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight'||event.key==='ArrowLeft')next=(i+1)%tabs.length;if(event.key==='Home')next=0;if(event.key==='End')next=tabs.length-1;if(next!==undefined){event.preventDefault();select(next,true);}});});
+ tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>select(i));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=(i+1)%tabs.length;if(event.key==='ArrowLeft')next=(i-1+tabs.length)%tabs.length;if(event.key==='Home')next=0;if(event.key==='End')next=tabs.length-1;if(next!==undefined){event.preventDefault();select(next,true);}});});
  panels.forEach(panel=>{
   const steps=[...panel.querySelectorAll('[data-service-step]')],cards=[...panel.querySelectorAll('.process-service')];
   const grid=panel.querySelector('.process-services-rows'),clear=panel.querySelector('[data-service-clear]'),status=panel.querySelector('[data-spotlight-status]');
   let chosen=-1;
+  const stepList=panel.querySelector('.service-step-list');
+  const svgNS='http://www.w3.org/2000/svg';
+  const connector=document.createElementNS(svgNS,'svg');
+  connector.classList.add('service-connector');connector.setAttribute('aria-hidden','true');
+  const track=document.createElementNS(svgNS,'path');
+  track.classList.add('service-connector-track');connector.append(track);
+  const segments=steps.slice(1).map(()=>{
+   const segment=document.createElementNS(svgNS,'path');
+   segment.classList.add('service-connector-progress');
+   segment.setAttribute('pathLength','1');connector.append(segment);return segment;
+  });
+  stepList.prepend(connector);
+  function updateConnector(){
+   if(!stepList.clientWidth)return;
+   const bounds=stepList.getBoundingClientRect();
+   const points=steps.map(step=>{const circle=step.querySelector('.service-step-circle').getBoundingClientRect();return {x:circle.left-bounds.left+circle.width/2,y:circle.top-bounds.top+circle.height/2};});
+   connector.setAttribute('viewBox',`0 0 ${bounds.width} ${bounds.height}`);
+   const coordinates=points.map((point,i)=>`${!i||Math.abs(point.y-points[i-1].y)>5?'M':'L'}${point.x},${point.y}`).join(' ');
+   track.setAttribute('d',coordinates);
+   segments.forEach((segment,i)=>{
+    const from=points[i],to=points[i+1];
+    const sameRow=Math.abs(from.y-to.y)<5;
+    segment.setAttribute('d',sameRow?`M${from.x},${from.y} L${to.x},${to.y}`:'');
+    segment.style.strokeDashoffset=chosen>=i+1?'0':'1';
+   });
+  }
+  new ResizeObserver(updateConnector).observe(stepList);
   function spotlight(index,scroll=false){
-   chosen=index;grid.classList.toggle('has-spotlight',index>=0);
+   chosen=index;updateConnector();grid.classList.toggle('has-spotlight',index>=0);
    cards.forEach((card,i)=>card.classList.toggle('is-spotlit',i===index));
    steps.forEach((step,i)=>step.setAttribute('aria-pressed',String(i===index)));
    clear.hidden=index<0;status.textContent=index<0?'All services shown.':cards[index].getAttribute('aria-label')+' highlighted.';
@@ -36,6 +63,16 @@
   steps.forEach((step,i)=>step.addEventListener('click',()=>spotlight(chosen===i?-1:i,true)));
   clear.addEventListener('click',()=>spotlight(-1));
   cards.forEach((card,i)=>card.addEventListener('focusin',()=>{if(chosen>=0&&chosen!==i)spotlight(i);}));
+  cards.forEach((card,i)=>{
+   card.addEventListener('click',event=>{
+    if(event.target.closest('a,button,summary'))return;
+    if(chosen===i)spotlight(-1);
+   });
+   card.addEventListener('keydown',event=>{
+    if(event.target!==card||!['Enter',' '].includes(event.key))return;
+    event.preventDefault();if(chosen===i)spotlight(-1);
+   });
+  });
  });
  panels.forEach(panel=>{
   const controls=new Map();

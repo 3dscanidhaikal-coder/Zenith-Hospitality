@@ -3,7 +3,7 @@
  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
  // Use the same reversible timeline as the Casa Momo design.
  document.querySelectorAll('.button, .menu-panel nav a, .footer-top nav a, .footer-top>div:last-child>a').forEach(control => {
-  const labels = [...control.querySelectorAll('.nav-full, .nav-short')];
+  const labels = [...control.querySelectorAll('.nav-full, .nav-short, .footer-email-line')];
   if (!labels.length) {
    const text = [...control.childNodes].find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
    if (!text) return;
@@ -101,7 +101,7 @@
  if('IntersectionObserver' in window && !reduce.matches){
   // Reveal individual content instead of hiding entire sections behind one trigger.
   document.querySelectorAll('.reveal').forEach(el=>el.classList.remove('reveal','is-visible'));
-  const candidates=[...document.querySelectorAll('main h1,main h2,main h3,main p,main figcaption,main .breadcrumb,main .text-link,main .button,main .service-detail summary,main .field,main .filters button,main .service-anchor-nav a,main .topic-list span,main .concept-label,main .publication-note strong,main .experience-number,main img,footer .footer-logo,footer p,footer h2,footer address,footer nav a,footer .footer-top>div:last-child>a,footer .footer-bottom span')].filter(el=>!el.closest('.hero,.slide,.zenith-squares,#draft-fallback')&&!el.matches('.service-photo img, .careers-office-photo img, .about-team-photo img, .people-home .portrait-frame img, .service-scene-image img'));
+  const candidates=[...document.querySelectorAll('main h1,main h2,main h3,main p,main figcaption,main .breadcrumb,main .text-link,main .button,main .service-detail summary,main .field,main .filters button,main .service-anchor-nav a,main .topic-list span,main .concept-label,main .publication-note strong,main .experience-number,main img,footer .footer-logo,footer p,footer h2,footer address,footer nav a,footer .footer-top>div:last-child>a,footer .footer-bottom span')].filter(el=>!el.closest('.hero,.slide,.solvyn-destination,.zenith-squares,#draft-fallback')&&!el.matches('.service-photo img, .careers-office-photo img, .about-team-photo img, .people-home .portrait-frame img, .service-scene-image img'));
   const candidateSet=new Set(candidates);
   const targets=candidates.filter(el=>{let parent=el.parentElement;while(parent){if(candidateSet.has(parent))return false;parent=parent.parentElement;}return true;});
   targets.forEach(el=>{
