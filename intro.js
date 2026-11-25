@@ -1,6 +1,7 @@
 (() => {
  'use strict';
  function playIntro(){
+ if(performance.getEntriesByType('navigation')[0]?.type==='back_forward'){document.documentElement.classList.add('intro-settled');return;}
  const reduce=matchMedia('(prefers-reduced-motion: reduce)');
  if(reduce.matches)return;
  const overlay=document.createElement('div');overlay.className='site-intro';overlay.setAttribute('aria-hidden','true');
@@ -58,5 +59,5 @@
  }
  playIntro();
  // A history-restored homepage is a new visit too.
- addEventListener('pageshow',event=>{if(event.persisted)playIntro();});
+ addEventListener('pageshow',event=>{if(event.persisted){document.documentElement.classList.add('intro-settled');document.documentElement.classList.remove('intro-playing');}});
 })();

@@ -25,7 +25,7 @@
   if(destination.origin!==location.origin||destination.hash!=='#services'||!document.querySelector('#services'))return;
   if(!/\/(?:index\.html)?$/.test(destination.pathname))return;
   event.preventDefault();event.stopImmediatePropagation();
-  const scroll=()=>{history.replaceState(null,'','#services');window.zenithMotion.scrollTo(document.querySelector('#services'));};
+  const scroll=()=>{history.replaceState(history.state,'','#services');window.zenithMotion.scrollTo(document.querySelector('#services'));};
   const menu=anchor.closest('dialog');
   if(menu?.open){
    menu.addEventListener('close',()=>requestAnimationFrame(scroll),{once:true});
