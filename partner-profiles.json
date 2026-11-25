@@ -266,5 +266,16 @@
         "Virtual walkthroughs complement hospitality marketing by helping prospective guests and partners understand the spaces they are considering."
       ]
     ]
+  },
+  {
+    "name": "Kembar Digital",
+    "file": "partners/kembar-digital.png",
+    "slug": "kembar-digital",
+    "category": "Digital partner",
+    "headline": "Kembar Digital.",
+    "intro": "Kembar Digital is part of the Zenith Hospitality Global partner network.",
+    "body": "More information about Kembar Digital and its work with Zenith will be added soon.",
+    "services": [],
+    "collaboration": []
   }
 ]
